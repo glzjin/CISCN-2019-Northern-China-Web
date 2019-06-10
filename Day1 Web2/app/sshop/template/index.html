@@ -1,0 +1,121 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<!--这题脑洞确实有点大,所以我们留了些hint,请注意!-->
+
+
+<div class="da-slider">
+    <div class="da-slide da-slide-current">
+        <h2>应援💓口号</h2>
+        <p>
+            白茶清欢无所爱，温柔只给***<br/>
+
+            古有项羽无人敌，今有**万人迷<br/>
+
+            玩归玩，闹归闹，***是你开不起的玩笑<br/>
+
+            低调低调，**驾到。不要掌声，只要尖叫<br/>
+
+            如今社会这么嗨，不爱**不应该<br/>
+
+            红塔山是烟，***是天<br/>
+
+            千军万马是ikun，ikun永远爱**<br/>
+
+            立场很简单，就是***。<br/>
+
+            ***，星辰为成歌<br/>
+
+            两耳不闻窗外事，一心只为***。<br/>
+
+            追梦少年不失眠，未来可期***<br/>
+
+            向阳花木每逢春，ikun一直爱**<br/>
+
+            徐徐清风沁心田，不忘初心伴坤随。</p>
+        <div class="da-img">
+            <video src="{{ static_url('video/kun.mp4') }}" controls="controls"
+                   style="height:100%; width: 100%;object-fit: fill"></video>
+        </div>
+    </div>
+</div>
+
+<div class="main_bg1">
+    <div class="wrap">
+        <div class="main1">
+            <div class="ui grid ">
+                <div class="eight  wide column left">
+                    <h2>爆破*站：资金募集 {{ raises }}</h2>
+                    <!--ikun人肉并祭天了潜伏已久黑粉程序员,永远不要惹我们家kunkun!-->
+                    <!--但是这个黑粉头子好像留了很多漏洞,有没有好心人帮我们家kunkun找出漏洞?!-->
+                    <p class="zhenai">ikun们冲鸭,一定要买到lv6!!!</p>
+
+                </div>
+                <div class="eight wide column right">
+                    <div id="prog" class="jd ui inverted progress" >
+                        <div class="bar" style="width:{{ raises/100 }}%;">
+                            <div class="progress">{{ raises/100  }}%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main_bg">
+    <div class="commodity-list wrap ">
+        <div class="main">
+            {% set x=0 %}
+            {% for data in commoditys %}
+            <div class="grids_of_3">
+                <div class="grid1_of_3">
+                    <a href="/info/{{ data.id }}">
+                        <img src="{{ static_url('img/b.png') }}" alt=""/>
+                        <img class="lv" src="/static/img/lv/lv{{data.lv}}.png" alt=""/>
+                        <h3>{{ data.name }}</h3>
+                    </a>
+                    <div class="price">
+                        <a href="javascript:;"
+                           onclick="document.getElementById('{{ data.name }}-{{ data.id }}').submit();">
+                            <h4>{{ data.price }}<span>购买</span></h4>
+                            <form action="/shopcar/add" method="post" id="{{ data.name }}-{{ data.id }}">
+                                {% raw xsrf_form_html() %}
+                                <input type="hidden" name="id" value="{{ data.id }}">
+                            </form>
+                    </div>
+                    <span class="b_btm"></span>
+                    </a>
+                </div>
+                {% set x=x+1 %}
+                {% if x%3==0 %}
+                <div class="clear"></div>
+                {% end %}
+            </div>
+            {% end %}
+        </div>
+
+        <div class="pagination " id="pag-1">
+            {% if preview-1 >= 0 %}
+            <div class="ui animated button " id="but-l-2">
+                <a href="?page={{ preview }}">
+                    <div class="visible content">上一页</div>
+                </a>
+
+            </div>
+            {% end %}
+            {% if len(commoditys) < limit or not next %}
+            {% else %}
+            <div class="ui animated button pull-right " id="but-r-2">
+                <a href="?page={{ next }}">
+                    <div class="visible content">下一页</div>
+                </a>
+
+            </div>
+            {% end %}
+        </div>
+    </div>
+</div>
+
+
+{% end %}

@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="login-bac">
+    <div class="login-wrap">
+  <div class="login-html">
+    <label class="tab">登录</label>
+    <div class="login-form">
+      <form action="/login" method="post" >
+          {% raw xsrf_form_html() %}
+      <div class="sign-in-htm">
+        <div class="group">
+          <label class="label">用户名</label>
+          <input type="text" class="input" name="username" placeholder="" required>
+        </div>
+        <div class="group">
+          <label class="label">密码</label>
+          <input type="password" class="input" name="password" placeholder="" required>
+        </div>
+        <div class="group">
+            <button type="submit" class="button bott" >登    录</button>
+        </div>
+        <div class="foot-lnk">
+          <a href="/pass/reset">找回密码</a>
+        </div>
+      </div>
+          </form>
+    </div>
+  </div>
+</div>
+</div>
+{% end %}
+

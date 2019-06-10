@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="jumbotron">
+    <h1>购物车</h1>
+    {% try %}
+    {% if commodity and discount!=0 %}
+    <div class="shopcar_list">
+        <ul class="list-group">
+            <li class="list-group-item">{{ commodity.name }} <img src="/static/img/lv/lv{{commodity.lv}}.png" alt=""/> /
+                {{ commodity.price }}
+            </li>
+            <p>优惠券:-{{(1-discount)*100}}%</p>
+            <p>{{discount*commodity.price}}</p>
+        </ul>
+        <form action="" method="post">
+            {% raw xsrf_form_html() %}
+            <input type="hidden" name="id" value="{{ commodity.id }}">
+            <input type="hidden" name="price" value="{{ commodity.price }}">
+            <input type="hidden" name="discount" value="{{ discount }}">
+            <button class="btn btn-danger" type="submit">结算</button>
+        </form>
+    </div>
+    {% elif commodity %}
+    <div class="shopcar_list">
+        <ul class="list-group">
+            <li class="list-group-item">{{ commodity.name }} <img src="/static/img/lv/lv{{commodity.lv}}.png" alt=""/> /
+                {{ commodity.price }}
+            </li>
+            <p>优惠券:无 <a class="small" data-tooltip="募集金额条到100%就能获取优惠券">获取方式</a></p>
+        </ul>
+        <form action="" method="post">
+            {% raw xsrf_form_html() %}
+            <input type="hidden" name="id" value="{{ commodity.id }}">
+            <input type="hidden" name="price" value="{{ commodity.price }}">
+            <button class="btn btn-danger" type="submit">结算</button>
+        </form>
+    </div>
+    {% end %}
+    {% except %}
+    <p>空</p>
+    {% end %}
+</div>
+{% end %}

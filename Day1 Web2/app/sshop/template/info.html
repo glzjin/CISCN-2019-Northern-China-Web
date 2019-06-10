@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="jumbotron commodity-info">
+    <div class="grids_of_3">
+        <a href="/info/{{ commodity.id }}">
+            <img src="{{ static_url('img/b.png') }}" alt=""/>
+            <img class="lv" src="/static/img/lv/lv{{commodity.lv}}.png" alt=""/>
+            <h3>{{ commodity.name }}</h3>
+        </a>
+        <div class="price">
+            <p>Price: {{ commodity.price }}</p>
+            <p class="lead" style="word-wrap:break-word">{{ commodity.desc }}</p>
+            <p>Amount:{{ commodity.amount }}</p>
+        </div>
+        </a>
+    </div>
+    <form action="/pay" method="post">
+        {% raw xsrf_form_html() %}
+        <input type="hidden" name="id" value="{{ commodity.id }}">
+        <input type="hidden" name="price" value="{{ commodity.price }}">
+        <button class="btn btn-lg btn-success">Buy</button>
+    </form>
+</div>
+
+{% end %}

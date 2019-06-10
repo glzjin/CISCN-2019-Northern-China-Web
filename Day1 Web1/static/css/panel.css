@@ -1,0 +1,20 @@
+.hidden {
+    display: none;
+}
+
+.fileLabel:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.fileLabel {
+    color: #007bff;
+}
+
+.top {
+    position: absolute;
+    top: 10%;
+    right: 0%;
+    left: 0%;
+    pointer-events: none;
+}

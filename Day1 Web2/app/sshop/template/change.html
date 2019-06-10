@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+    <div class="login-wrap-2">
+  <div class="login-html">
+    <label class="tab">修改密码</label>
+    <div class="login-form">
+      <form action="/user/change" method="post" >
+          {% raw xsrf_form_html() %}
+      <div class="sign-in-htm">
+        <div class="group">
+          <label class="label">原密码</label>
+          <input type="text" class="input" name="old_password" placeholder="" required>
+        </div>
+        <div class="group">
+          <label class="label">新密码</label>
+          <input type="password" class="input" name="password" placeholder="" required>
+        </div>
+       <div class="group">
+          <label class="label">确认密码</label>
+          <input type="password" class="input" name="password_confirm" placeholder="" required>
+        </div>
+        <div class="group">
+            <button type="submit" class="button but-1" >修改密码</button>
+        </div>
+      </div>
+          </form>
+    </div>
+  </div>
+</div>
+{% end %}

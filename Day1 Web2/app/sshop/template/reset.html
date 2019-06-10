@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="login-bac">
+    <div class="login-wrap">
+  <div class="login-html">
+    <label class="tab">重置密码</label>
+    <div class="login-form">
+      <form action="/pass/reset" method="post" >
+          {% raw xsrf_form_html() %}
+      <div class="sign-in-htm">
+        <div class="group">
+          <label class="label">邮件地址</label>
+          <input type="email" class="input" name="mail" placeholder="" required>
+        </div>
+        <div class="group">
+            <button type="submit" class="button but-1 " >发送重置链接</button>
+        </div>
+      </div>
+          </form>
+    </div>
+  </div>
+</div>
+</div>
+{% end %}

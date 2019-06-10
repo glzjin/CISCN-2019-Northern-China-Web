@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="ui text container login-wrap-inf ">
+        <br><br>
+      <h4 class="ui horizontal header divider">
+        information
+      </h4>
+    <h3 class="  user-email ui raised very text segment center ">
+        <div class="user-info">
+            <br>{{ user.username }}<br><br><br>邮箱地址：{{ user.mail }}
+        <br><br><br>剩余金额：{{ user.integral }}<br><br><br><br>
+        </div>
+    </h3>
+
+    <h4 class="ui horizontal header divider">
+        <br>
+      </h4>
+    <div class="center">
+        <a class="ui item " href="/user/change">修改密码</a>
+          <a class="ui item " href="/logout">注销</a>
+    </div>
+    </div>
+{% end %}

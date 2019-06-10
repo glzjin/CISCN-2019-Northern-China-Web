@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="ui text container login-wrap-inf">
+    <!-- 潜伏敌后已久,只能帮到这了 -->
+    <a href="/static/asd1f654e683wq/www.zip" ><span style="visibility:hidden">删库跑路前我留了好东西在这里</span></a>
+        <div class="ui segments center padddd">
+            <!-- 对抗*站黑科技，目前为测试阶段，只对管理员开放 -->
+            <div class="ui segment">
+                <img src="/static/img/b.png" alt=""/>
+                {% if member==1 %}
+                <p class="color_pink">admin</p>
+                <img class="lv" src="/static/img/member.png" alt=""/>
+                {% else %}
+                <p>admin</p>
+                {% end %}
+            </div>
+            <div class="ui segment">{{ res }}</div>
+            <div class="ui segment">
+                <form action="/b1g_m4mber" method="post">
+                    {% raw xsrf_form_html() %}
+                    <input hidden="hidden" type="text" class="f-m ui segment" name="become" placeholder="" value="admin" required>
+                    <div class="group">
+                        <button type="submit" class="ui secondary button ">一键成为大会员</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+</div>
+{% end %}

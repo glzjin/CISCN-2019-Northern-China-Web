@@ -1,0 +1,270 @@
+
+
+/*	################################################################
+	1. GENERAL STRUCTURES
+################################################################# */
+
+/* Import fonts */
+@import url(http://fonts.googleapis.com/css?family=Raleway:900,700,400);
+
+* { 
+	margin: 0;
+	padding: 0px;
+    font-family: 'Raleway', sans-serif;
+} 
+body { 
+	background: #fff; 
+	margin: 0; 
+	color: #5a5a5a;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', sans-serif;
+	font-weight: 700;
+}
+
+
+p { 
+	padding: 0; 
+	margin-bottom: 12px; 
+    font-family: 'Raleway', sans-serif;
+	font-weight: 300;
+	font-size: 18px; 
+	line-height: 28px;
+	color: rgb(255, 253, 253); 
+	margin-top: 10px; 
+}
+
+.alignleft { float: left; }
+.alignright { float: right; }
+.aligncenter {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	clear: both;
+}
+.centered {text-align: center}
+.mt {margin-top: 50px;}
+.mb {margin-bottom: 50px;}
+.mtb {margin-top: 50px; margin-bottom: 50px;}
+.mtb2 { margin-top: 100px; margin-bottom: 100px;}
+.ptb {padding-top: 80px; padding-bottom: 80px;}
+
+.clear {
+	clear: both;
+	display: block;
+	font-size: 0;
+	height: 0;
+	line-height: 0;
+	width:100%;
+}
+::-moz-selection  {
+	color: #fff;
+	text-shadow:none;
+	background:#2B2E31;
+}
+::selection {
+	color: #fff;
+	text-shadow:none;
+	background:#2B2E31;
+}
+*,
+*:after,
+*:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+a { 
+	padding: 0;
+	margin: 0;
+	text-decoration: none; 
+	-webkit-transition: background-color .4s linear, color .4s linear;
+	-moz-transition: background-color .4s linear, color .4s linear;
+	-o-transition: background-color .4s linear, color .4s linear;
+	-ms-transition: background-color .4s linear, color .4s linear;
+	transition: background-color .4s linear, color .4s linear;
+	color: #000000;
+}
+a:hover,
+a:focus {
+  text-decoration: none;
+  color:rgb(232, 248, 1);
+}
+
+.nopadding {
+	padding: 0px !important;
+	margin: 0px;
+}
+.copyrights{
+	text-indent:-9999px;
+	height:0;
+	line-height:0;
+	font-size:0;
+	overflow:hidden;
+}
+/* Bootstrap Modification */
+
+.navbar-inverse {
+	background: transparent;
+	border: transparent;
+}
+
+img {
+	padding-bottom: 10px;
+}
+
+/* FORM CONFIGURATION */
+
+input {
+	font-size: 16px;
+	min-height: 40px;
+	border-radius: 2px;
+	line-height: 20px;
+	padding: 11px 30px 12px;
+	border: 1px solid #b9b9af;
+	margin-bottom: 10px;
+	background-color: #fff ;
+	-webkit-transition: background-color 0.2s;
+	transition: background-color 0.2s;
+}
+
+.subscribe-input {
+	float: center;
+	width: 65%;
+	text-align: center;
+	margin-right: 2px;
+    color:#000;
+}
+
+.subscribe-submit {
+	right: 0;
+    color:#000;
+}
+
+
+.btn-register {
+	margin-top: 15px;
+	border-radius: 50px;
+	margin-right: 10px;
+	top: 0px;
+	float: center;
+	font-size: 16px;
+}
+.btn-cen {
+	margin-top: 15px;
+	border-radius: 50px;
+	margin-right: 10px;
+	top: 0px;
+	float: center;
+	font-size: 20px;
+}
+
+.btn-sub {
+	border-radius: 50px;
+}
+
+/* Overall Buttons*/
+.btn-theme {
+	border-radius: 50px;
+	font-size: 14px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.btn-white {
+	background: white;
+	color: #2f2f2f;
+}
+
+.btn-white:hover {
+	background: #2f2f2f;
+	color: white;
+}
+
+/* HEADER SECTION */
+#logo{max-width:640px;width:80%;display:block;margin:20px auto 0}
+
+
+
+#h {
+	background: url(../img/A-mercenary-on-the-rise-zh-cn.jpg) no-repeat center top;
+	padding-top: 10px;
+	text-align:center;
+	background-attachment: relative;
+	background-position: center center;
+	min-height: 450px;
+	width: 100%;
+	
+    
+
+	background-color: #2B2E31;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+#h h1 {
+	color: white;
+	font-weight: 900;
+	font-size: 70px;
+	letter-spacing: 5px;
+}
+
+#h h2 {
+	color: white;
+	font-weight: 900;
+	font-size: 36px;
+	letter-spacing: 5px;
+}
+
+#h h3 {
+	color: white;
+	font-weight: 400;
+}
+
+#h img {
+	padding-bottom: 0px;
+}
+
+/* White Section */
+#w {
+	background: white;
+	width: 100%;
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+
+#w .col-md-6 {
+	padding-right: 0px;
+}
+
+#w p {
+	color: #9f9f9f;
+	font-size: 16px;
+}
+
+
+/* FOOTER */
+#f {
+	background: #494d4e;
+	width: 100%;
+	padding-top: 60px;
+	padding-bottom: 60px;
+	color: white;
+}
+
+#f p {
+	color: white;
+}
+
+#f h4 {
+	font-weight: 400;
+	text-align: center;
+	font-size: 24px;
+}
+
