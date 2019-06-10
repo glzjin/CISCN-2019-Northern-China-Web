@@ -1,0 +1,2 @@
+Disallow: /login.html
+Disallow: /backup.zip  
