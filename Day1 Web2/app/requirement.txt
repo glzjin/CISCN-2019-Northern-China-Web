@@ -9,7 +9,7 @@ idna==2.6
 lxml
 pycparser==2.18
 pyquery==1.4.0
-requests==2.18.4
+requests==2.31.0
 singledispatch==3.4.0.3
 six==1.11.0
 SQLAlchemy==1.2.7
